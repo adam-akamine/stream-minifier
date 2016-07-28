@@ -1,0 +1,9 @@
+body {
+  height: 100%;
+  font-family: sans-serif;
+  color: gray; }
+  body h1 {
+    font-size: 40px;
+    color: gray;
+    font-weight: bold;
+    letter-spacing: 0.05em; }
