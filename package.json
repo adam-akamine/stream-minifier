@@ -1,0 +1,20 @@
+{
+  "name": "stream-minifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "minify.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kekuso/stream-minifier.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kekuso/stream-minifier/issues"
+  },
+  "homepage": "https://github.com/kekuso/stream-minifier#readme"
+}

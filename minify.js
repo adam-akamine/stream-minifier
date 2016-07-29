@@ -1,22 +1,13 @@
-var Transform = require('stream').Transform,
-util = require('util');
+var TransformStream = require('./transformStream.js'),
+    fs = require('fs');
 
-var TransformStream = function() {
-  Transform.call(this, {objectMode: true});
-};
-util.inherits(TransformStream, Transform);
+var argv = require('minimist')(process.argv.slice(2));
+var inputFile = argv.input;
+var outputFile = argv.output;
+//console.dir(argv);
 
-TransformStream.prototype._transform = function(chunk, encoding, callback) {
-  console.log('transform before : ' + JSON.stringify(chunk));
+var rs = fs.createReadStream(inputFile);
+var ws = fs.createWriteStream(outputFile);
+var ts = new TransformStream();
 
-  if (typeof chunk.originalValue === 'undefined') {
-    chunk.originalValue = chunk.value;
-  }
-  chunk.value++;
-
-  console.log('transform after : ' + JSON.stringify(chunk));
-  this.push(chunk);
-  callback();
-};
-
-module.exports = TransformStream;
+rs.pipe(ts).pipe(ws);
